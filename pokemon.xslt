@@ -2,6 +2,9 @@
 xmlns="http://www.w3.org/1999/xhtml"
 >
 	<xsl:template match="/*">
+		<style>
+			:root { --image: url(https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/100.png) }
+		</style>
 		<main id="app">
 
 			<h1>Pokemon Card, Holo Effect</h1>
