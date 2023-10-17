@@ -1,9 +1,11 @@
 ﻿<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
+xmlns:searchParams="http://panax.io/site/searchParams"
 xmlns="http://www.w3.org/1999/xhtml"
 >
+	<xsl:param name="searchParams:id">101</xsl:param>
 	<xsl:template match="/*">
 		<style>
-			:root { --image: url(https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/100.png) }
+			:root { --image: url(https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/<xsl:value-of select="$searchParams:id"/>.png) }
 		</style>
 		<main id="app">
 
