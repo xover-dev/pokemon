@@ -7,6 +7,11 @@ xmlns="http://www.w3.org/1999/xhtml"
 		<style>
 			:root { --image: url(https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/<xsl:value-of select="$searchParams:id"/>.png) }
 		</style>
+		<script><![CDATA[
+xover.listener.on(`click::li:not([onclick]) a[href="#"]`, function() {
+     xo.site.searchParams.set('id', this.textContent)
+})
+		]]></script>
 		<main id="app">
 
 			<h1>Pokemon Card, Holo Effect</h1>
@@ -15,17 +20,17 @@ xmlns="http://www.w3.org/1999/xhtml"
 					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) - 1})">
 						<a class="page-link" href="#">Previous</a>
 					</li>
-					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) - 1})">
+					<li class="page-item">
 						<a class="page-link" href="#">
 							<xsl:value-of select="$searchParams:id - 1"/>
 						</a>
 					</li>
-					<li class="page-item active" onclick="xo.site.searchParams.set('id',{number($searchParams:id)})">
+					<li class="page-item active">
 						<a class="page-link" href="#">
 							<xsl:value-of select="$searchParams:id"/>
 						</a>
 					</li>
-					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) + 1})">
+					<li class="page-item">
 						<a class="page-link" href="#">
 							<xsl:value-of select="$searchParams:id + 1"/>
 						</a>
