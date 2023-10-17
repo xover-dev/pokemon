@@ -10,7 +10,31 @@ xmlns="http://www.w3.org/1999/xhtml"
 		<main id="app">
 
 			<h1>Pokemon Card, Holo Effect</h1>
-			<p>I've had to disable animation effect, as it seems there's a bug in Chromium with animations and mix-blend-mode rendering conflicts</p>
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<li class="page-item">
+						<a class="page-link" href="?id={$searchParams:id - 1}">Previous</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="?id={number($searchParams:id) - 1}">
+							<xsl:value-of select="$searchParams:id - 1"/>
+						</a>
+					</li>
+					<li class="page-item active">
+						<a class="page-link">
+							<xsl:value-of select="$searchParams:id"/>
+						</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="?id={number($searchParams:id) + 1}">
+							<xsl:value-of select="$searchParams:id + 1"/>
+						</a>
+					</li>
+					<li class="page-item">
+						<a class="page-link" href="?id={number($searchParams:id) + 1}">Next</a>
+					</li>
+				</ul>
+			</nav>
 
 			<div class="card">
 			</div>
