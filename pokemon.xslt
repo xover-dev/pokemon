@@ -12,26 +12,26 @@ xmlns="http://www.w3.org/1999/xhtml"
 			<h1>Pokemon Card, Holo Effect</h1>
 			<nav aria-label="Page navigation example">
 				<ul class="pagination">
-					<li class="page-item">
-						<a class="page-link" href="?id={$searchParams:id - 1}">Previous</a>
+					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) - 1})">
+						<a class="page-link" href="#">Previous</a>
 					</li>
-					<li class="page-item">
-						<a class="page-link" href="?id={number($searchParams:id) - 1}">
+					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) - 1})">
+						<a class="page-link" href="#">
 							<xsl:value-of select="$searchParams:id - 1"/>
 						</a>
 					</li>
-					<li class="page-item active">
-						<a class="page-link">
+					<li class="page-item active" onclick="xo.site.searchParams.set('id',{number($searchParams:id)})">
+						<a class="page-link" href="#">
 							<xsl:value-of select="$searchParams:id"/>
 						</a>
 					</li>
-					<li class="page-item">
-						<a class="page-link" href="?id={number($searchParams:id) + 1}">
+					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) + 1})">
+						<a class="page-link" href="#">
 							<xsl:value-of select="$searchParams:id + 1"/>
 						</a>
 					</li>
-					<li class="page-item">
-						<a class="page-link" href="?id={number($searchParams:id) + 1}">Next</a>
+					<li class="page-item" onclick="xo.site.searchParams.set('id',{number($searchParams:id) + 1})">
+						<a class="page-link" href="#pokemon">Next</a>
 					</li>
 				</ul>
 			</nav>
